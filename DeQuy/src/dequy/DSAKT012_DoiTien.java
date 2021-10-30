@@ -8,36 +8,56 @@ import java.util.Scanner;
  * @author Xuan Toog
  */
 public class DSAKT012_DoiTien {
-    static int count = 0;
-    static long a[], s;
-    static int n, index;
+    static int[] c, a;
+    static int n, s, k=1;
+    static int kq = 0;
+    static boolean run = true;
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        s = sc.nextLong();
-        a = new long[n];
-        for(int i=0; i<n; i++) {
-            a[i] = sc.nextLong();
-        }
-        Arrays.sort(a);
+        n = sc.nextInt(); s = sc.nextInt();
+        a = new int[n+1]; c = new int[n+1];
+        for(int i=1; i<=n; i++) a[i] = sc.nextInt();
         
-        System.out.println(doitien());
+        while(run==true) {
+            quaylui(1, n, k);
+            if(k<n) k++;
+        }
+        
+        System.out.println(kq);
     }
     
-    public static int doitien() {
-        index = n-1;
-        long tmp = 0;
-        while(index>=0 && tmp<=s) {
-            if(tmp+a[index] <= s) {
-                tmp += a[index];
-                count++;
+    public static void quaylui(int i, int n, int k) {
+        for(int j=1; j<=n; j++) {
+            c[i] = a[j];
+            if(i==k) {
+                in();
+//                if(xuly()==true) {
+//                    in();
+//                    run = false;
+//                    kq = k;
+//                    break;
+//                }
             }
-            index--;
-            if(tmp==s) break;
+            else quaylui(i+1, n, k);
+        }
+    }
+    
+    public static boolean xuly() {
+        int sum = 0;
+        for(int i=1; i<=k; i++) {
+            sum += c[i];
         }
         
-        if(tmp==s) return count;
-        return -1;
+        if(sum == s) 
+            return true;
+        
+        return false;
+    }
+    
+    public static void in() {
+        for(int i=1; i<=k ; i++)
+            System.out.print(c[i] + " ");
+        System.out.println();
     }
 }

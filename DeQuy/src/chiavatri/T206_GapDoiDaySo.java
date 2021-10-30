@@ -1,4 +1,4 @@
-package dequy;
+package chiavatri;
 
 import java.util.Scanner;
 

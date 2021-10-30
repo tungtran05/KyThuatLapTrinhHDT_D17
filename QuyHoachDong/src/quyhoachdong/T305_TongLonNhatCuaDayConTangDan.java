@@ -20,7 +20,6 @@ public class T305_TongLonNhatCuaDayConTangDan {
             for(int i=0;i<n;i++) a[i] = sc.nextInt();
             System.out.println(qhd(a,n));
         }
-        
     }
     
     public static int qhd(int a[], int n) {
