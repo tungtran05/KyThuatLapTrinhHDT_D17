@@ -7,34 +7,37 @@ package loptriangle;
 
 import java.util.Scanner;
 
-
+/**
+ *
+ * @author Xuan Toog
+ */
 class Point {
-    float x, y;
+    private double x, y;
 
-    public Point(float x, float y) {
-        this.x = x;
-        this.y = y;
+    public Point(Scanner sc) {
+        x = sc.nextDouble();
+        y = sc.nextDouble();
+    }
+    
+    public static Point nextPoint(Scanner sc) {
+        return new Point(sc);
     }
 
-    public float getX() {
+    public double getX() {
         return x;
     }
 
-    public void setX(float x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public float getY() {
+    public double getY() {
         return y;
     }
 
-    public void setY(float y) {
+    public void setY(double y) {
         this.y = y;
     }
     
-    public Point nextPoint(Scanner sc) {
-        x = sc.nextFloat();
-        y = sc.nextFloat();
-        return this;
-    }
+    
 }

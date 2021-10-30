@@ -19,13 +19,13 @@ public class PhanSo {
     }
     
     public void rutgon() {
-        long x = usc(tu, mau);
+        long x = uscln(tu, mau);
         tu /= x;
         mau /= x;
     }
     
-    private long usc(long a, long b) {
+    private long uscln(long a, long b) {
         if(b==0) return a;
-        else return usc(b, a%b);
+        else return uscln(b, a%b);
     }
 }
