@@ -10,7 +10,7 @@ package tinhgio;
  * @author Xuan Toog
  */
 public class MonHoc {
-    private String ma, ten;private  Double gio;
+    private String ma, ten;
     
     public MonHoc() {
         
@@ -35,19 +35,6 @@ public class MonHoc {
 
     public void setTen(String ten) {
         this.ten = ten;
-    }
-
-    public Double getGio() {
-        return gio;
-    }
-
-    public void setGio(Double gio) {
-        this.gio = gio;
-    }
-
-    @Override
-    public String toString() {
-        return ten + " " + gio;
     }
     
     

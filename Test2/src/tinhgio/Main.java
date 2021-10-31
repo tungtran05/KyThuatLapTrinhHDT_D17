@@ -39,16 +39,6 @@ public class Main {
             arrLHP.add(lhp);
             
             for(GiangVien gv : arrGV) {
-                ArrayList<MonHoc> arr = new ArrayList();
-                for(MonHoc mh : arrMH) {
-                    if(mh.getMa().equals(str[1])) {
-                        mh.setGio(Double.parseDouble(str[2]));
-                        arr.add(mh);
-                    }
-                        
-                }
-                gv.setArr(arr);
-                
                 if(gv.getMa().equals(str[0])) {
                     double tonggio = gv.getTonggio();
                     tonggio += Double.parseDouble(str[2]);
@@ -57,10 +47,7 @@ public class Main {
             }
         }
         
-        String maGV = sc.nextLine();
-        
         for(GiangVien gv  : arrGV)
-           if(gv.getMa().equals(maGV))
-                System.out.println(gv);
+            System.out.println(gv);
     }
 }

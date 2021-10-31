@@ -5,8 +5,6 @@
  */
 package tinhgio;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Xuan Toog
@@ -14,7 +12,6 @@ import java.util.ArrayList;
 public class GiangVien {
     private String ma, ten;
     private double tonggio;
-    private ArrayList<MonHoc> arr;
 
     public GiangVien() {
         
@@ -48,26 +45,10 @@ public class GiangVien {
         this.tonggio = tonggio;
     }
 
-//    @Override
-//    public String toString() {
-//        return ten+" "+String.format("%.2f", tonggio);
-//    }
-
-    public ArrayList<MonHoc> getArr() {
-        return arr;
-    }
-
-    public void setArr(ArrayList<MonHoc> arr) {
-        this.arr = arr;
-    }
-    
     @Override
     public String toString() {
-        String tmp = "";
-        tmp += "Giang vien: " + ten + "\n";
-        for(MonHoc mh : arr)
-            tmp += mh.toString() + "\n";
-        tmp += "Tong: " + String.format("%.2f", tonggio);
-        return tmp;
+        return ten+" "+String.format("%.2f", tonggio);
     }
+    
+    
 }
