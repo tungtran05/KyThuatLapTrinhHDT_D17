@@ -17,9 +17,24 @@ public class SoLocPhat {
         int t = sc.nextInt();
         while(t-->0) {
             int n = sc.nextInt();
-            Stack<String> st = new Stack();
-            st.push("6");
-            st.push("8");
+            Queue<String> q = new ArrayDeque<>();
+            ArrayList<String> arr = new ArrayList<>();
+            
+            q.add("6"); q.add("8");
+            String tmp = "";
+            while(tmp.length() <= n) {
+                tmp = q.poll();
+                if(tmp.length() <=n)
+                    arr.add(tmp);
+                
+                q.add(tmp+"6");
+                q.add(tmp+"8");
+            }
+            
+            System.out.println(arr.size());
+            for(int i=arr.size()-1; i>=0; i--)
+                System.out.print(arr.get(i) + " ");
+            System.out.println();
         }
     }
 }

@@ -11,30 +11,29 @@ import java.util.*;
  *
  * @author Xuan Toog
  */
-public class SoLocPhatDoiXungChan {
+public class SoNguyenThuy {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         while(t-->0) {
             int n = sc.nextInt();
-            String kq = "";
-            Queue<String> q = new ArrayDeque<String>();
             int count = 0;
+            Queue<String> q = new LinkedList<>();
             
-            q.add("6"); q.add("8");
+            q.add("4"); q.add("5");
             while(count < n) {
                 String tmp = q.poll();
                 count++;
                 
                 System.out.print(tmp);
-                for(int i=tmp.length()-1; i>=0; i--)
-                    System.out.print(tmp.charAt(i)+"");
-                
+                for(int i=tmp.length()-1; i>=0; i--) {
+                    System.out.print(tmp.charAt(i));
+                }
                 System.out.print(" ");
-                q.add(tmp + "6");
-                q.add(tmp + "8");
+                
+                q.add(tmp + "4");
+                q.add(tmp + "5");
             }
-            
             System.out.println();
         }
     }
