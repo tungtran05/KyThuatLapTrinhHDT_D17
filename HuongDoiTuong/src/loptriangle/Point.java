@@ -18,6 +18,11 @@ class Point {
         x = sc.nextDouble();
         y = sc.nextDouble();
     }
+
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
     
     public static Point nextPoint(Scanner sc) {
         return new Point(sc);

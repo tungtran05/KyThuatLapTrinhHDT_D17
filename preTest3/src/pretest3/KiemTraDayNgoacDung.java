@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nganxep;
+package pretest3;
 
 /**
  *
  * @author Xuan Toog
  */
 import java.util.*;
-
 public class KiemTraDayNgoacDung {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int t = Integer.parseInt(in.nextLine());
+        Scanner sc = new Scanner(System.in);
+        int t = Integer.parseInt(sc.nextLine());
         while(t-->0) {
-            String s = in.nextLine();
+            String s = sc.nextLine();
             if(check(s)) System.out.println("YES");
             else System.out.println("NO");
         }
@@ -25,19 +24,16 @@ public class KiemTraDayNgoacDung {
     public static boolean check(String s) {
         Stack<Character> st = new Stack();
         for(int i=0; i<s.length(); i++) {
-            char out = s.charAt(i);
-            if(out == '(' || out == '[' || out == '{')
-                st.push(out);
+            char c = s.charAt(i);
+            if(c=='[' || c=='(' || c=='{') st.push(c);
             else {
                 if(st.empty()) return false;
-                char in = st.peek();
-                if(in == '(' && out == ')') st.pop();
-                else if(in == '[' && out == ']') st.pop();
-                else if(in == '{' && out == '}') st.pop();
-                else return false;
+                else if(c==']' && st.peek()=='[') st.pop();
+                else if(c=='}' && st.peek()=='{') st.pop();
+                else if(c==')' && st.peek()=='(') st.pop();
             }
         }
         
-        return st.empty();
+        return true;
     }
 }

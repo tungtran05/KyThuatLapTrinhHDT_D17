@@ -5,6 +5,8 @@
  */
 package loptriangle;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Xuan Toog
@@ -16,6 +18,17 @@ class Triangle {
         this.a = a;
         this.b = b;
         this.c = c;
+    }
+
+    Triangle(String str) {
+        String arr[] = str.split(" ");
+        ArrayList<Double> a = new ArrayList<>();
+        for(String tmp : arr) {
+            a.add(Double.parseDouble(tmp));
+        }
+        this.a = new Point(a.get(0), a.get(1));
+        this.b = new Point(a.get(2), a.get(3));
+        this.c = new Point(a.get(4), a.get(5));
     }
     
     public double dodai(Point a, Point b) {
